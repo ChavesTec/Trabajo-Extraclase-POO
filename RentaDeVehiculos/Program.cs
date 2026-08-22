@@ -71,6 +71,10 @@ class Vehiculo
     {
         this.disponible = false;
     }
+    internal void MarcarDevuelto()
+    {
+        this.disponible = true;
+    }
 }
 
 // Clases de todos los tipos de vehiculos
@@ -207,7 +211,7 @@ class Cliente
     private int id;
     private string nombre;
     private float presupuesto;
-    private List<Vehiculo> vehiculos_rentados;
+    private List<Vehiculo> vehiculos_rentados = new List<Vehiculo>();
 
     public Cliente(int id, string nombre, float presupuesto)
     {
@@ -237,17 +241,15 @@ class Cliente
 
     public void Devolver(Vehiculo vehiculo)
     {
-        if (!vehiculo.Disponible)
+        if (!vehiculos_rentados.Contains(vehiculo))
         {
-            Console.WriteLine("El vehiculo no está disponible.");
-        }
-        else if (this.presupuesto < vehiculo.CostoRenta)
-        {
-            Console.WriteLine($"No tiene suficiente presupuesto, minimo: {vehiculo.CostoRenta}.");
+        Console.WriteLine("Este vehículo no está rentado por este cliente.");
         }
         else
         {
+            vehiculo.MarcarDevuelto();
             vehiculos_rentados.Remove(vehiculo);
+            Console.WriteLine("Vehículo devuelto con éxito.");
         }
     }
 }

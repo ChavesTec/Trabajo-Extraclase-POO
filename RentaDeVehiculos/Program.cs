@@ -79,22 +79,6 @@ class Vehiculo
 
 // Clases de todos los tipos de vehiculos
 
-// Marino
-class VehiculoMarino : Vehiculo
-{
-    private int capacidad_carga;
-    private int num_motores;
-
-    public VehiculoMarino(string color, int id, int velocidad_max,
-    int capacidad_pasajeros, float costo_renta, int capacidad_carga, int num_motores):
-    base(color, id, velocidad_max, capacidad_pasajeros, costo_renta)
-    {
-        this.capacidad_carga = capacidad_carga;
-        this.num_motores = num_motores;
-    }
-}
-// Fin marino
-
 // Terrestre
 class VehiculoTerrestre : Vehiculo
 {
@@ -238,48 +222,6 @@ class Avion : VehiculoAereo
     int altura_max_aprox, bool tiene_piloto_automatico):
     base(color, id, velocidad_max, capacidad_pasajeros, costo_renta,
     num_motores, altura_max_aprox, tiene_piloto_automatico) {}
-}
-
-
-// Subclases vehiculos marinos
-class Barco : VehiculoMarino
-{
-    private bool velero;
-    public Barco(string color, int id, int velocidad_max,
-    int capacidad_pasajeros, float costo_renta, int capacidad_carga, int num_motores, bool velero):
-    base(color, id, velocidad_max, capacidad_pasajeros, costo_renta, capacidad_carga,
-    num_motores) {this.velero = velero;}
-
-    protected void abrir_velas()
-    {
-        if (this.velero) {Console.WriteLine("Abriendo velas...");} else {Console.WriteLine("No es un velero.");}
-    }
-}
-
-class Submarino : VehiculoMarino
-{
-    private int profundidad_maxima_aprox;
-    private float capacidad_oxigeno;
-
-    public Submarino(string color, int id, int velocidad_max,
-    int capacidad_pasajeros, float costo_renta, int capacidad_carga, int num_motores,
-    int profundidad_maxima_aprox, float capacidad_oxigeno):
-    base(color, id, velocidad_max, capacidad_pasajeros, costo_renta, capacidad_carga,
-    num_motores)
-    {
-        this.profundidad_maxima_aprox = profundidad_maxima_aprox;
-        this.capacidad_oxigeno = capacidad_oxigeno;
-    }
-
-    protected void ascender()
-    {
-        Console.WriteLine("Ascendiendo...");
-    }
-
-    protected void descender()
-    {
-        Console.WriteLine("Descendiendo...");
-    }
 }
 
 

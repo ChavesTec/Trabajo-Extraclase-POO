@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\speed\\Documents\\C#\\Datos\\RentaDeVehiculos\\RentaDeVehiculos.csproj": {}
+    "C:\\Users\\speed\\Documents\\C#\\Datos\\Trabajo-Extraclase-POO\\RentaDeVehiculos\\RentaDeVehiculos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\speed\\Documents\\C#\\Datos\\RentaDeVehiculos\\RentaDeVehiculos.csproj": {
+    "C:\\Users\\speed\\Documents\\C#\\Datos\\Trabajo-Extraclase-POO\\RentaDeVehiculos\\RentaDeVehiculos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\speed\\Documents\\C#\\Datos\\RentaDeVehiculos\\RentaDeVehiculos.csproj",
+        "projectUniqueName": "C:\\Users\\speed\\Documents\\C#\\Datos\\Trabajo-Extraclase-POO\\RentaDeVehiculos\\RentaDeVehiculos.csproj",
         "projectName": "RentaDeVehiculos",
-        "projectPath": "C:\\Users\\speed\\Documents\\C#\\Datos\\RentaDeVehiculos\\RentaDeVehiculos.csproj",
+        "projectPath": "C:\\Users\\speed\\Documents\\C#\\Datos\\Trabajo-Extraclase-POO\\RentaDeVehiculos\\RentaDeVehiculos.csproj",
         "packagesPath": "C:\\Users\\speed\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\speed\\Documents\\C#\\Datos\\RentaDeVehiculos\\obj\\",
+        "outputPath": "C:\\Users\\speed\\Documents\\C#\\Datos\\Trabajo-Extraclase-POO\\RentaDeVehiculos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\speed\\AppData\\Roaming\\NuGet\\NuGet.Config"

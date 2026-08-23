@@ -106,6 +106,21 @@ class VehiculoTerrestre : Vehiculo
     {
         this.num_llantas = num_llantas;
     }
+
+    protected virtual void acelerar()
+    {
+        Console.WriteLine("Acelerando...");
+    }
+
+    protected virtual void frenar()
+    {
+        Console.WriteLine("Frenando...");
+    }
+
+    protected virtual void abrir_maletero()
+    {
+        Console.WriteLine("Abriendo maletero...");
+    }
 }
 // Fin terrestre
 
@@ -125,6 +140,28 @@ class VehiculoAereo : Vehiculo
         this.num_motores = num_motores;
         this.tiene_piloto_automatico = tiene_piloto_automatico;
     }
+
+    protected void ascender()
+    {
+        Console.WriteLine("Ascendiendo...");
+    }
+
+    protected void descender()
+    {
+        Console.WriteLine("Descendiendo...");
+    }
+
+    protected void activar_piloto_automatico()
+    {
+        if (this.tiene_piloto_automatico)
+        {
+            Console.WriteLine("Piloto automatico activo.");
+        }
+        else
+        {
+            Console.WriteLine("No tiene piloto automatico.");
+        }
+    }
 }
 // Fin aereo
 
@@ -143,6 +180,16 @@ class Coche : VehiculoTerrestre
         this.tiene_aire_acondicionado = tiene_aire_acondicionado;
         this.num_puertas = num_puertas;
     }
+
+    protected override void acelerar()
+    {
+        Console.WriteLine("Metiendo pedal de gas...");
+    }
+
+    protected override void frenar()
+    {
+        Console.WriteLine("Metiendo pedal de frenar...");
+    }
 }
 
 class Moto : VehiculoTerrestre
@@ -155,6 +202,21 @@ class Moto : VehiculoTerrestre
     base(color, id, velocidad_max, capacidad_pasajeros, costo_renta, num_llantas)
     {
         this.tiene_maletero = tiene_maletero;
+    }
+
+    protected override void acelerar()
+    {
+        Console.WriteLine("Girando el gas...");
+    }
+
+    protected override void frenar()
+    {
+        Console.WriteLine("Accionando palanca de frenos...");
+    }
+
+    protected override void abrir_maletero()
+    {
+        if (this.tiene_maletero) {Console.WriteLine("Abriendo maletero...");} else {Console.WriteLine("No tiene maletero.");}
     }
 }
 
@@ -182,10 +244,16 @@ class Avion : VehiculoAereo
 // Subclases vehiculos marinos
 class Barco : VehiculoMarino
 {
+    private bool velero;
     public Barco(string color, int id, int velocidad_max,
-    int capacidad_pasajeros, float costo_renta, int capacidad_carga, int num_motores):
+    int capacidad_pasajeros, float costo_renta, int capacidad_carga, int num_motores, bool velero):
     base(color, id, velocidad_max, capacidad_pasajeros, costo_renta, capacidad_carga,
-    num_motores) {}
+    num_motores) {this.velero = velero;}
+
+    protected void abrir_velas()
+    {
+        if (this.velero) {Console.WriteLine("Abriendo velas...");} else {Console.WriteLine("No es un velero.");}
+    }
 }
 
 class Submarino : VehiculoMarino
@@ -201,6 +269,16 @@ class Submarino : VehiculoMarino
     {
         this.profundidad_maxima_aprox = profundidad_maxima_aprox;
         this.capacidad_oxigeno = capacidad_oxigeno;
+    }
+
+    protected void ascender()
+    {
+        Console.WriteLine("Ascendiendo...");
+    }
+
+    protected void descender()
+    {
+        Console.WriteLine("Descendiendo...");
     }
 }
 

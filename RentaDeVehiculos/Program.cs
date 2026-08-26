@@ -2,13 +2,13 @@
 
 class Vehiculo
 {
-    private string color;
-    private int id;
-    private bool disponible = true;
-    private int velocidad_max;
-    private int capacidad_pasajeros;
-    private float costo_renta;
-    private bool encendido = false;
+    protected string color;
+    protected int id;
+    protected bool disponible = true;
+    protected int velocidad_max;
+    protected int capacidad_pasajeros;
+    protected float costo_renta;
+    protected bool encendido = false;
 
     public Vehiculo(string color, int id, int velocidad_max,
                 int capacidad_pasajeros, float costo_renta)
@@ -20,7 +20,7 @@ class Vehiculo
     this.costo_renta = costo_renta;
     }
 
-    private void encender()
+    protected void encender()
     {
         if (this.encendido == true)
         {
@@ -33,7 +33,7 @@ class Vehiculo
         }
     }
 
-    private void apagar()
+    protected void apagar()
     {
         if (this.encendido == false)
         {
@@ -46,7 +46,7 @@ class Vehiculo
         }
     }
 
-    private void pintar(string new_color)
+    protected void pintar(string new_color)
     {
         if (new_color == this.color)
         {
@@ -75,6 +75,18 @@ class Vehiculo
     {
         this.disponible = true;
     }
+
+    // Mostrar informacion del vehiculo
+    public virtual void MostrarInformacion()
+    {
+    Console.WriteLine($"ID: {id}");
+    Console.WriteLine($"Color: {color}");
+    Console.WriteLine($"Velocidad máxima: {velocidad_max} km/h");
+    Console.WriteLine($"Capacidad de pasajeros: {capacidad_pasajeros}");
+    Console.WriteLine($"Costo de renta: {costo_renta}");
+    Console.WriteLine($"Disponible: {(disponible ? "Sí" : "No")}");
+    Console.WriteLine($"Encendido: {(encendido ? "Sí" : "No")}");
+    }
 }
 
 // Clases de todos los tipos de vehiculos
@@ -82,7 +94,7 @@ class Vehiculo
 // Terrestre
 class VehiculoTerrestre : Vehiculo
 {
-    private int num_llantas;
+    protected int num_llantas;
 
     public VehiculoTerrestre(string color, int id, int velocidad_max,
     int capacidad_pasajeros, float costo_renta, int num_llantas):
@@ -111,9 +123,9 @@ class VehiculoTerrestre : Vehiculo
 // Aereo
 class VehiculoAereo : Vehiculo
 {
-    private int num_motores;
-    private int altura_max_aprox;
-    private bool tiene_piloto_automatico;
+    protected int num_motores;
+    protected int altura_max_aprox;
+    protected bool tiene_piloto_automatico;
 
     public VehiculoAereo(string color, int id, int velocidad_max,
     int capacidad_pasajeros, float costo_renta, int num_motores, 
@@ -153,8 +165,8 @@ class VehiculoAereo : Vehiculo
 // Subclases vehiculos terrestres
 class Coche : VehiculoTerrestre
 {
-    private int num_puertas;
-    private bool tiene_aire_acondicionado;
+    protected int num_puertas;
+    protected bool tiene_aire_acondicionado;
 
     public Coche(string color, int id, int velocidad_max,
     int capacidad_pasajeros, float costo_renta, int num_llantas,
@@ -174,11 +186,20 @@ class Coche : VehiculoTerrestre
     {
         Console.WriteLine("Metiendo pedal de frenar...");
     }
+
+    // Mostrar informacion del coche
+    public override void MostrarInformacion()
+    {
+    base.MostrarInformacion();
+    Console.WriteLine($"Número de llantas: {num_llantas}");
+    Console.WriteLine($"Número de puertas: {num_puertas}");
+    Console.WriteLine($"¿Aire acondicionado?: {(tiene_aire_acondicionado ? "Sí" : "No")}");
+    }
 }
 
 class Moto : VehiculoTerrestre
 {
-    private bool tiene_maletero;
+    protected bool tiene_maletero;
 
     public Moto(string color, int id, int velocidad_max,
     int capacidad_pasajeros, float costo_renta, int num_llantas,
@@ -202,6 +223,14 @@ class Moto : VehiculoTerrestre
     {
         if (this.tiene_maletero) {Console.WriteLine("Abriendo maletero...");} else {Console.WriteLine("No tiene maletero.");}
     }
+
+    // Mostrar informacion de la moto
+    public override void MostrarInformacion()
+    {
+    base.MostrarInformacion();
+    Console.WriteLine($"Número de llantas: {num_llantas}");
+    Console.WriteLine($"¿Maletero?: {(tiene_maletero ? "Sí" : "No")}");
+    }
 }
 
 
@@ -213,6 +242,15 @@ class Helicoptero : VehiculoAereo
     int altura_max_aprox, bool tiene_piloto_automatico):
     base(color, id, velocidad_max, capacidad_pasajeros, costo_renta,
     num_motores, altura_max_aprox, tiene_piloto_automatico) {}
+
+    // Mostrar informacion del helicoptero
+    public override void MostrarInformacion()
+    {
+    base.MostrarInformacion();
+    Console.WriteLine($"Altura máxima: {altura_max_aprox}");
+    Console.WriteLine($"Número de motores: {num_motores}");
+    Console.WriteLine($"¿Piloto automático?: {(tiene_piloto_automatico ? "Sí" : "No")}");
+    }
 }
 
 class Avion : VehiculoAereo
@@ -222,6 +260,15 @@ class Avion : VehiculoAereo
     int altura_max_aprox, bool tiene_piloto_automatico):
     base(color, id, velocidad_max, capacidad_pasajeros, costo_renta,
     num_motores, altura_max_aprox, tiene_piloto_automatico) {}
+
+    // Mostrar informacion del helicoptero
+    public override void MostrarInformacion()
+    {
+    base.MostrarInformacion();
+    Console.WriteLine($"Altura máxima: {altura_max_aprox}");
+    Console.WriteLine($"Número de motores: {num_motores}");
+    Console.WriteLine($"¿Piloto automático?: {(tiene_piloto_automatico ? "Sí" : "No")}");
+    }
 }
 
 
@@ -252,7 +299,6 @@ class Cliente
         }
         else
         {
-            this.presupuesto -= vehiculo.CostoRenta;
             vehiculo.MarcarRentado();
             vehiculos_rentados.Add(vehiculo);
             Console.WriteLine("Vehiculo rentado con exito.");
@@ -270,6 +316,29 @@ class Cliente
             vehiculo.MarcarDevuelto();
             vehiculos_rentados.Remove(vehiculo);
             Console.WriteLine("Vehículo devuelto con éxito.");
+        }
+    }
+
+    // Mostrar info del cliente
+    public void MostrarInformacionCliente()
+    {
+        Console.WriteLine($"ID: {id}");
+        Console.WriteLine($"Nombre: {nombre}");
+        Console.WriteLine($"Presupuesto del cliente: ${presupuesto}");
+
+        if (vehiculos_rentados.Count > 0)
+        {
+            Console.WriteLine("Vehículos rentados:");
+
+            foreach (Vehiculo vehiculo in vehiculos_rentados)
+            {
+                Console.WriteLine("--------------------------");
+                vehiculo.MostrarInformacion();
+            }
+        }
+        else
+        {
+            Console.WriteLine("Sin vehículos rentados.");
         }
     }
 }

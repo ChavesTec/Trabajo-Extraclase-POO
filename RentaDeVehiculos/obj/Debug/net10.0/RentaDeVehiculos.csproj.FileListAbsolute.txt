@@ -1,0 +1,15 @@
+C:\Users\speed\Documents\C#\Datos\Trabajo-Extraclase-POO\RentaDeVehiculos\bin\Debug\net10.0\RentaDeVehiculos.exe
+C:\Users\speed\Documents\C#\Datos\Trabajo-Extraclase-POO\RentaDeVehiculos\bin\Debug\net10.0\RentaDeVehiculos.deps.json
+C:\Users\speed\Documents\C#\Datos\Trabajo-Extraclase-POO\RentaDeVehiculos\bin\Debug\net10.0\RentaDeVehiculos.runtimeconfig.json
+C:\Users\speed\Documents\C#\Datos\Trabajo-Extraclase-POO\RentaDeVehiculos\bin\Debug\net10.0\RentaDeVehiculos.dll
+C:\Users\speed\Documents\C#\Datos\Trabajo-Extraclase-POO\RentaDeVehiculos\bin\Debug\net10.0\RentaDeVehiculos.pdb
+C:\Users\speed\Documents\C#\Datos\Trabajo-Extraclase-POO\RentaDeVehiculos\obj\Debug\net10.0\RentaDeVehiculos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\speed\Documents\C#\Datos\Trabajo-Extraclase-POO\RentaDeVehiculos\obj\Debug\net10.0\RentaDeVehiculos.AssemblyInfoInputs.cache
+C:\Users\speed\Documents\C#\Datos\Trabajo-Extraclase-POO\RentaDeVehiculos\obj\Debug\net10.0\RentaDeVehiculos.AssemblyInfo.cs
+C:\Users\speed\Documents\C#\Datos\Trabajo-Extraclase-POO\RentaDeVehiculos\obj\Debug\net10.0\RentaDeVehiculos.csproj.CoreCompileInputs.cache
+C:\Users\speed\Documents\C#\Datos\Trabajo-Extraclase-POO\RentaDeVehiculos\obj\Debug\net10.0\RentaDeVehiculos.sourcelink.json
+C:\Users\speed\Documents\C#\Datos\Trabajo-Extraclase-POO\RentaDeVehiculos\obj\Debug\net10.0\RentaDeVehiculos.dll
+C:\Users\speed\Documents\C#\Datos\Trabajo-Extraclase-POO\RentaDeVehiculos\obj\Debug\net10.0\refint\RentaDeVehiculos.dll
+C:\Users\speed\Documents\C#\Datos\Trabajo-Extraclase-POO\RentaDeVehiculos\obj\Debug\net10.0\RentaDeVehiculos.pdb
+C:\Users\speed\Documents\C#\Datos\Trabajo-Extraclase-POO\RentaDeVehiculos\obj\Debug\net10.0\RentaDeVehiculos.genruntimeconfig.cache
+C:\Users\speed\Documents\C#\Datos\Trabajo-Extraclase-POO\RentaDeVehiculos\obj\Debug\net10.0\ref\RentaDeVehiculos.dll

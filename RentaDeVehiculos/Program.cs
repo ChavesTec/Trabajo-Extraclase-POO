@@ -342,3 +342,193 @@ class Cliente
         }
     }
 }
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // ==========================================
+        // CREACIÓN DE VEHÍCULOS
+        // ==========================================
+
+        Coche coche = new Coche(
+            "Rojo",
+            1,
+            200,
+            5,
+            15000,
+            4,
+            4,
+            true
+        );
+
+        Moto moto = new Moto(
+            "Negro",
+            2,
+            180,
+            2,
+            8000,
+            2,
+            true
+        );
+
+        Helicoptero helicoptero = new Helicoptero(
+            "Blanco",
+            3,
+            250,
+            6,
+            30000,
+            2,
+            5000,
+            true
+        );
+
+        Avion avion = new Avion(
+            "Azul",
+            4,
+            900,
+            200,
+            65000,
+            4,
+            12000,
+            true
+        );
+
+
+        // ==========================================
+        // CASO 1: MOSTRAR INFORMACIÓN DE VEHÍCULOS
+        // ==========================================
+
+        Console.WriteLine("==========================================");
+        Console.WriteLine("CASO 1: INFORMACIÓN DE VEHÍCULOS");
+        Console.WriteLine("==========================================");
+
+        coche.MostrarInformacion();
+
+        Console.WriteLine("--------------------------");
+
+        moto.MostrarInformacion();
+
+        Console.WriteLine("--------------------------");
+
+        helicoptero.MostrarInformacion();
+
+        Console.WriteLine("--------------------------");
+
+        avion.MostrarInformacion();
+
+
+        // ==========================================
+        // CASO 2: CREAR CLIENTE
+        // ==========================================
+
+        Console.WriteLine("\n==========================================");
+        Console.WriteLine("CASO 2: INFORMACIÓN DEL CLIENTE");
+        Console.WriteLine("==========================================");
+
+        Cliente cliente = new Cliente(
+            100,
+            "Mateo",
+            60000
+        );
+
+        cliente.MostrarInformacionCliente();
+
+
+        // ==========================================
+        // CASO 3: RENTAR UN VEHÍCULO
+        // ==========================================
+
+        Console.WriteLine("\n==========================================");
+        Console.WriteLine("CASO 3: RENTAR COCHE");
+        Console.WriteLine("==========================================");
+
+        cliente.Rentar(coche);
+
+        cliente.MostrarInformacionCliente();
+
+
+        // ==========================================
+        // CASO 4: INTENTAR RENTAR EL MISMO VEHÍCULO
+        // ==========================================
+
+        Console.WriteLine("\n==========================================");
+        Console.WriteLine("CASO 4: RENTAR COCHE NO DISPONIBLE");
+        Console.WriteLine("==========================================");
+
+        cliente.Rentar(coche);
+
+
+        // ==========================================
+        // CASO 5: RENTAR OTROS VEHÍCULOS
+        // ==========================================
+
+        Console.WriteLine("\n==========================================");
+        Console.WriteLine("CASO 5: RENTAR MOTO Y HELICÓPTERO");
+        Console.WriteLine("==========================================");
+
+        cliente.Rentar(moto);
+        cliente.Rentar(helicoptero);
+
+        cliente.MostrarInformacionCliente();
+
+
+        // ==========================================
+        // CASO 6: INTENTAR RENTAR VEHÍCULO MUY CARO
+        // ==========================================
+
+        Console.WriteLine("\n==========================================");
+        Console.WriteLine("CASO 6: PRESUPUESTO INSUFICIENTE");
+        Console.WriteLine("==========================================");
+
+        cliente.Rentar(avion);
+
+
+        // ==========================================
+        // CASO 7: DEVOLVER UN VEHÍCULO
+        // ==========================================
+
+        Console.WriteLine("\n==========================================");
+        Console.WriteLine("CASO 7: DEVOLVER COCHE");
+        Console.WriteLine("==========================================");
+
+        cliente.Devolver(coche);
+
+        cliente.MostrarInformacionCliente();
+
+
+        // ==========================================
+        // CASO 8: INTENTAR DEVOLVER VEHÍCULO
+        // QUE NO TIENE EL CLIENTE
+        // ==========================================
+
+        Console.WriteLine("\n==========================================");
+        Console.WriteLine("CASO 8: DEVOLVER VEHÍCULO NO RENTADO");
+        Console.WriteLine("==========================================");
+
+        cliente.Devolver(avion);
+
+
+        // ==========================================
+        // CASO 9: RENTAR NUEVAMENTE EL COCHE
+        // DESPUÉS DE DEVOLVERLO
+        // ==========================================
+
+        Console.WriteLine("\n==========================================");
+        Console.WriteLine("CASO 9: VOLVER A RENTAR EL COCHE");
+        Console.WriteLine("==========================================");
+
+        cliente.Rentar(coche);
+
+        cliente.MostrarInformacionCliente();
+
+
+        // ==========================================
+        // FINAL
+        // ==========================================
+
+        Console.WriteLine("\n==========================================");
+        Console.WriteLine("FIN DE LOS CASOS DE PRUEBA");
+        Console.WriteLine("==========================================");
+    }
+}

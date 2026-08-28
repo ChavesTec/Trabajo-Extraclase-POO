@@ -126,15 +126,17 @@ abstract class VehiculoAereo : Vehiculo
     protected int num_motores;
     protected int altura_max_aprox;
     protected bool tiene_piloto_automatico;
+    protected bool giran_sentido_horario;
 
     public VehiculoAereo(string color, int id, int velocidad_max,
     int capacidad_pasajeros, float costo_renta, int num_motores, 
-    int altura_max_aprox, bool tiene_piloto_automatico):
+    int altura_max_aprox, bool tiene_piloto_automatico, bool giran_sentido_horario):
     base(color, id, velocidad_max, capacidad_pasajeros, costo_renta)
     {
         this.altura_max_aprox = altura_max_aprox;
         this.num_motores = num_motores;
         this.tiene_piloto_automatico = tiene_piloto_automatico;
+        this.giran_sentido_horario = giran_sentido_horario;
     }
 
     protected void ascender()
@@ -158,6 +160,12 @@ abstract class VehiculoAereo : Vehiculo
             Console.WriteLine("No tiene piloto automatico.");
         }
     }
+
+    protected void cambiar_direccion_helices()
+    {
+        this.giran_sentido_horario = !this.giran_sentido_horario;
+    }
+
 }
 // Fin aereo
 
@@ -239,9 +247,9 @@ class Helicoptero : VehiculoAereo
 {
     public Helicoptero(string color, int id, int velocidad_max,
     int capacidad_pasajeros, float costo_renta, int num_motores, 
-    int altura_max_aprox, bool tiene_piloto_automatico):
+    int altura_max_aprox, bool tiene_piloto_automatico, bool giran_sentido_horario):
     base(color, id, velocidad_max, capacidad_pasajeros, costo_renta,
-    num_motores, altura_max_aprox, tiene_piloto_automatico) {}
+    num_motores, altura_max_aprox, tiene_piloto_automatico, giran_sentido_horario) {}
 
     // Mostrar informacion del helicoptero
     public override void MostrarInformacion()
@@ -257,9 +265,9 @@ class Avion : VehiculoAereo
 {
     public Avion(string color, int id, int velocidad_max,
     int capacidad_pasajeros, float costo_renta, int num_motores, 
-    int altura_max_aprox, bool tiene_piloto_automatico):
+    int altura_max_aprox, bool tiene_piloto_automatico, bool giran_sentido_horario):
     base(color, id, velocidad_max, capacidad_pasajeros, costo_renta,
-    num_motores, altura_max_aprox, tiene_piloto_automatico) {}
+    num_motores, altura_max_aprox, tiene_piloto_automatico, giran_sentido_horario) {}
 
     // Mostrar informacion del helicoptero
     public override void MostrarInformacion()
@@ -380,6 +388,7 @@ class Program
             30000,
             2,
             5000,
+            true,
             true
         );
 
@@ -391,6 +400,7 @@ class Program
             65000,
             4,
             12000,
+            true,
             true
         );
 

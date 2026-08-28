@@ -1,6 +1,6 @@
 ﻿// Clase Vehiculo
 
-class Vehiculo
+abstract class Vehiculo
 {
     protected string color;
     protected int id;
@@ -92,7 +92,7 @@ class Vehiculo
 // Clases de todos los tipos de vehiculos
 
 // Terrestre
-class VehiculoTerrestre : Vehiculo
+abstract class VehiculoTerrestre : Vehiculo
 {
     protected int num_llantas;
 
@@ -121,7 +121,7 @@ class VehiculoTerrestre : Vehiculo
 // Fin terrestre
 
 // Aereo
-class VehiculoAereo : Vehiculo
+abstract class VehiculoAereo : Vehiculo
 {
     protected int num_motores;
     protected int altura_max_aprox;
